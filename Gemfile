@@ -25,6 +25,7 @@ gem 'simple_form', '~> 5.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'paperclip', '~> 6.1'
 
 
 # Use Active Storage variant
