@@ -4337,3 +4337,1569 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 70ms (Views: 61.3ms | ActiveRecord: 1.8ms | Allocations: 13828)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReviews (20210429204521)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210429204521"]]
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToReviews (20210429204646)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.0ms)[0m  [1m[35mALTER TABLE "reviews" ADD "user_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210429204646"]]
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddArticleIdToReviews (20210429204757)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (13.5ms)[0m  [1m[35mALTER TABLE "reviews" ADD "article_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210429204757"]]
+  [1m[36mTRANSACTION (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-04-30 00:06:35 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 35.8ms | Allocations: 9177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 976.5ms | Allocations: 112567)
+Completed 200 OK in 1005ms (Views: 977.5ms | ActiveRecord: 4.9ms | Allocations: 117110)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 00:06:41 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 23.8ms | Allocations: 4106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 11601)
+Completed 200 OK in 56ms (Views: 46.3ms | ActiveRecord: 3.3ms | Allocations: 12824)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:06:44 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2145)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 2210)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.5ms | Allocations: 6900)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    1: <h1>New Review </h1>
+    2: 
+    3: <%= render 'form' %>
+  
+app/views/reviews/new.html.erb:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-04-30 00:09:47 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 34.8ms | Allocations: 9177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 120.2ms | Allocations: 33155)
+Completed 200 OK in 152ms (Views: 128.8ms | ActiveRecord: 2.4ms | Allocations: 37660)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 00:09:49 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 19.1ms | Allocations: 4100)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 11595)
+Completed 200 OK in 56ms (Views: 48.5ms | ActiveRecord: 0.6ms | Allocations: 12816)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:09:51 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2144)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2209)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.5ms | Allocations: 6875)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    1: <h1>New Review </h1>
+    2: 
+    3: <%= render 'form' %>
+  
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:10:09 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1847)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 1911)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3230)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    1: <h1>New Review </h1>
+    2: 
+    3: <%= render 'form' %>
+  
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:11:35 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1845)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1910)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3097)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    1: <h1>New Review </h1>
+    2: 
+    3: <%= render 'form' %>
+  
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:12:10 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1845)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 1910)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3097)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    1: <h1>New Review </h1>
+    2: 
+    3: <%= render 'form' %>
+  
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 00:12:17 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 14.6ms | Allocations: 2402)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 10719)
+Completed 200 OK in 51ms (Views: 44.7ms | ActiveRecord: 0.5ms | Allocations: 12290)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:12:20 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1099)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1163)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1533)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    1: <h1>New Review </h1>
+    2: 
+    3: <%= render 'form' %>
+  
+app/views/reviews/new.html.erb:3
+Started GET "/" for 127.0.0.1 at 2021-04-30 00:13:57 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 3013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 11602)
+Completed 200 OK in 55ms (Views: 45.5ms | ActiveRecord: 0.7ms | Allocations: 12156)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-04-30 00:14:05 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 23ms (ActiveRecord: 0.1ms | Allocations: 5678)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 00:14:05 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2773)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 10451)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.5ms | Allocations: 10880)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 00:14:06 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  Rendered articles/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1076)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 8679)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.4ms | Allocations: 9620)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:14:09 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1099)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1163)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1529)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    1: <h1>New Review </h1>
+    2: 
+    3: <%= render 'form' %>
+  
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:18:40 +0300
+  
+SyntaxError (/home/dean/Documents/github/article_app/app/controllers/reviews_controller.rb:2: syntax error, unexpected [, expecting `do' or '{' or '('
+...ore_action :find_review, only [:edit, :update, :destroy]
+...                              ^
+):
+  
+app/controllers/reviews_controller.rb:2: syntax error, unexpected [, expecting `do' or '{' or '('
+app/controllers/reviews_controller.rb:2: syntax error, unexpected [, expecting `do' or '{' or '('
+app/controllers/reviews_controller.rb:2: syntax error, unexpected [, expecting `do' or '{' or '('
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:18:56 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1099)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1163)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.9ms | Allocations: 6113)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    1: <h1>New Review </h1>
+    2: 
+    3: <%= render 'form' %>
+  
+app/views/reviews/new.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:21:57 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 2.7ms | Allocations: 1765)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2064)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2128)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3299)
+
+
+  
+ActionView::Template::Error (undefined method `reviews' for nil:NilClass):
+    1: <%= simple_form_for([@article, @article.reviews.build]) do |f| %>
+    2: 	<%= f.input :rating %>
+    3: 	<%= f.input :comment %>
+    4: 	<%= f.button :submit %>
+  
+app/views/reviews/_form.html.erb:1
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:22:11 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 0.9ms | Allocations: 1279)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1578)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1643)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2815)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 	<%= f.input :rating %>
+	<%= f.input :comment %>
+	<%= f.button :submit %>
+	<% end %>
+
+):
+1:    	<%= f.input :rating %>
+2:    	<%= f.input :comment %>
+3:    	<%= f.button :submit %>
+4:    	<% end %>
+  
+app/views/reviews/_form.html.erb:6: syntax error, unexpected `end', expecting end-of-input
+app/views/reviews/_form.html.erb:6: syntax error, unexpected `end', expecting end-of-input
+app/views/reviews/_form.html.erb:6: syntax error, unexpected `end', expecting end-of-input
+app/views/reviews/_form.html.erb:6: syntax error, unexpected `end', expecting end-of-input
+app/views/reviews/_form.html.erb:6: syntax error, unexpected `end', expecting end-of-input
+app/views/reviews/_form.html.erb:6: syntax error, unexpected `end', expecting end-of-input
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:22:27 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 12.3ms | Allocations: 4636)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4935)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4999)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 6170)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<ActionView::Base:0x000000000263e0>):
+    1: 	<%= f.input :rating %>
+    2: 	<%= f.input :comment %>
+    3: 	<%= f.button :submit %>
+  
+app/views/reviews/_form.html.erb:1
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:23:05 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 6.3ms | Allocations: 1758)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2057)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2121)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 3292)
+
+
+  
+ActionView::Template::Error (undefined method `reviews' for nil:NilClass):
+    1: <%= simple_form_for([@article, @article.reviews.build]) do |f| %>
+    2: 	<%= f.input :rating %>
+    3: 	<%= f.input :comment %>
+    4: 	<%= f.button :submit %>
+  
+app/views/reviews/_form.html.erb:1
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 00:23:18 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  Rendered articles/show.html.erb within layouts/application (Duration: 24.7ms | Allocations: 4542)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 62.3ms | Allocations: 12664)
+Completed 200 OK in 102ms (Views: 66.5ms | ActiveRecord: 1.8ms | Allocations: 21052)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:23:21 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 13.8ms | Allocations: 1617)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1708)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 1772)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2138)
+
+
+  
+ActionView::Template::Error (undefined method `reviews' for nil:NilClass):
+    1: <%= simple_form_for([@article, @article.reviews.build]) do |f| %>
+    2: 	<%= f.input :rating %>
+    3: 	<%= f.input :comment %>
+    4: 	<%= f.button :submit %>
+  
+app/views/reviews/_form.html.erb:1
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:24:30 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 2.4ms | Allocations: 1757)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2056)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2120)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3314)
+
+
+  
+ActionView::Template::Error (undefined method `review' for nil:NilClass):
+    1: <%= simple_form_for([@article, @article.review.build]) do |f| %>
+    2: 	<%= f.input :rating %>
+    3: 	<%= f.input :comment %>
+    4: 	<%= f.button :submit %>
+  
+app/views/reviews/_form.html.erb:1
+app/views/reviews/new.html.erb:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:34:53 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 6.1ms | Allocations: 2042)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2456)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2525)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.6ms | Allocations: 9522)
+
+
+  
+ActionView::Template::Error (undefined method `reviews' for nil:NilClass):
+    1: <%= simple_form_for([@article, @article.reviews.build]) do |f| %>
+    2: 	<%= f.input :rating %>
+    3: 	<%= f.input :comment %>
+    4: 	<%= f.button :submit %>
+  
+app/views/reviews/_form.html.erb:1
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews" for 127.0.0.1 at 2021-04-30 00:35:08 +0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ReviewsController
+Did you mean?  new
+               edit
+               create):
+  
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/articles/9/" for 127.0.0.1 at 2021-04-30 00:35:13 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  Rendered articles/show.html.erb within layouts/application (Duration: 27.7ms | Allocations: 5875)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 102.0ms | Allocations: 22361)
+Completed 200 OK in 142ms (Views: 105.7ms | ActiveRecord: 2.6ms | Allocations: 31775)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:35:16 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 2.1ms | Allocations: 1621)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1712)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1776)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2154)
+
+
+  
+ActionView::Template::Error (undefined method `reviews' for nil:NilClass):
+    1: <%= simple_form_for([@article, @article.reviews.build]) do |f| %>
+    2: 	<%= f.input :rating %>
+    3: 	<%= f.input :comment %>
+    4: 	<%= f.button :submit %>
+  
+app/views/reviews/_form.html.erb:1
+app/views/reviews/new.html.erb:3
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 00:36:48 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reviews_controller.rb:32:in `find_article'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:32:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 105.2ms | Allocations: 17500)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 107.9ms | Allocations: 17589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 147.6ms | Allocations: 27690)
+Completed 200 OK in 207ms (Views: 155.1ms | ActiveRecord: 4.5ms | Allocations: 39926)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 20:10:50 +0300
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 58.2ms | Allocations: 9177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 196.5ms | Allocations: 28308)
+Completed 200 OK in 242ms (Views: 195.7ms | ActiveRecord: 8.5ms | Allocations: 32751)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 20:11:54 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (4.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  Rendered articles/show.html.erb within layouts/application (Duration: 18.6ms | Allocations: 3190)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 10702)
+Completed 200 OK in 98ms (Views: 53.8ms | ActiveRecord: 4.9ms | Allocations: 14033)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 20:12:03 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  [1m[36mArticle Load (2.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:32:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 123.0ms | Allocations: 17615)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 124.3ms | Allocations: 17917)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 206.8ms | Allocations: 25586)
+Completed 200 OK in 244ms (Views: 214.5ms | ActiveRecord: 4.0ms | Allocations: 30816)
+
+
+Started POST "/articles/9/reviews" for 127.0.0.1 at 2021-04-30 20:12:12 +0300
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"6", "comment"=>"nice magazine"}, "commit"=>"Create Review", "article_id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:32:in `find_article'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms | Allocations: 1854)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/reviews_controller.rb:17:in `create'
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 20:37:42 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reviews_controller.rb:32:in `find_article'
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:32:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 53.4ms | Allocations: 6384)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 54.4ms | Allocations: 6682)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 92.6ms | Allocations: 15010)
+Completed 200 OK in 113ms (Views: 98.8ms | ActiveRecord: 1.1ms | Allocations: 17582)
+
+
+Started POST "/articles/9/reviews" for 127.0.0.1 at 2021-04-30 20:37:47 +0300
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"3", "comment"=>"dsdsd"}, "commit"=>"Create Review", "article_id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:32:in `find_article'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 1866)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/reviews_controller.rb:17:in `create'
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 20:45:04 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reviews_controller.rb:34:in `find_article'
+  [1m[36mArticle Load (4.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:34:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 53.1ms | Allocations: 7233)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 53.5ms | Allocations: 7322)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 117.8ms | Allocations: 17127)
+Completed 200 OK in 208ms (Views: 122.0ms | ActiveRecord: 5.1ms | Allocations: 28494)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-04-30 20:45:08 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.8ms | Allocations: 610)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 81.3ms | Allocations: 9733)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 120.1ms | Allocations: 17296)
+Completed 200 OK in 157ms (Views: 131.6ms | ActiveRecord: 1.1ms | Allocations: 22763)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-04-30 20:45:16 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chris@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "chris@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 710ms (ActiveRecord: 3.1ms | Allocations: 4067)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 20:45:16 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 28.1ms | Allocations: 3040)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 74.5ms | Allocations: 11522)
+Completed 200 OK in 82ms (Views: 78.7ms | ActiveRecord: 1.2ms | Allocations: 12596)
+
+
+Started GET "/articles/8" for 127.0.0.1 at 2021-04-30 20:45:19 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 19.1ms | Allocations: 3001)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 10494)
+Completed 200 OK in 66ms (Views: 60.0ms | ActiveRecord: 0.6ms | Allocations: 11565)
+
+
+Started GET "/articles/8/reviews/new" for 127.0.0.1 at 2021-04-30 20:45:22 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"8"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:34:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 65.7ms | Allocations: 6023)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 71.2ms | Allocations: 6116)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 118.9ms | Allocations: 14567)
+Completed 200 OK in 129ms (Views: 121.3ms | ActiveRecord: 0.4ms | Allocations: 15525)
+
+
+Started POST "/articles/8/reviews" for 127.0.0.1 at 2021-04-30 20:45:30 +0300
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "comment"=>"ABC"}, "commit"=>"Create Review", "article_id"=>"8"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:34:in `find_article'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:16:in `create'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:16:in `create'
+  [1m[36mReview Create (6.8ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "created_at", "updated_at", "user_id", "article_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "ABC"], ["created_at", "2021-04-30 17:45:30.996855"], ["updated_at", "2021-04-30 17:45:30.996855"], ["user_id", 1], ["article_id", 8]]
+  ↳ app/controllers/reviews_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/articles/8
+Completed 302 Found in 65ms (ActiveRecord: 12.5ms | Allocations: 8934)
+
+
+Started GET "/articles/8" for 127.0.0.1 at 2021-04-30 20:45:31 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1916)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | Allocations: 9499)
+Completed 200 OK in 76ms (Views: 69.7ms | ActiveRecord: 0.7ms | Allocations: 10441)
+
+
+Started GET "/articles/8" for 127.0.0.1 at 2021-04-30 21:15:29 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (4.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 52.3ms | Allocations: 8251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 89.0ms | Allocations: 16356)
+Completed 200 OK in 156ms (Views: 94.5ms | ActiveRecord: 5.6ms | Allocations: 25190)
+
+
+Started GET "/articles/8/edit" for 127.0.0.1 at 2021-04-30 21:15:34 +0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/articles_controller.rb:39:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/edit.html.erb within layouts/application (Duration: 63.5ms | Allocations: 7235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 114.0ms | Allocations: 15628)
+Completed 200 OK in 135ms (Views: 119.3ms | ActiveRecord: 0.5ms | Allocations: 17319)
+
+
+Started GET "/articles/8/reviews/new" for 127.0.0.1 at 2021-04-30 21:15:42 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"8"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 50.8ms | Allocations: 7334)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 53.9ms | Allocations: 7631)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 97.1ms | Allocations: 15964)
+Completed 200 OK in 132ms (Views: 103.7ms | ActiveRecord: 0.6ms | Allocations: 20704)
+
+
+Started POST "/articles/8/reviews" for 127.0.0.1 at 2021-04-30 21:15:50 +0300
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"3", "comment"=>"awesome"}, "commit"=>"Create Review", "article_id"=>"8"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "created_at", "updated_at", "user_id", "article_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["comment", "awesome"], ["created_at", "2021-04-30 18:15:50.084181"], ["updated_at", "2021-04-30 18:15:50.084181"], ["user_id", 1], ["article_id", 8]]
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/articles/8
+Completed 302 Found in 66ms (ActiveRecord: 5.1ms | Allocations: 8787)
+
+
+Started GET "/articles/8" for 127.0.0.1 at 2021-04-30 21:15:50 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 16.5ms | Allocations: 1926)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 9519)
+Completed 200 OK in 65ms (Views: 59.3ms | ActiveRecord: 0.6ms | Allocations: 10462)
+
+
+Started GET "/articles/8/reviews/new" for 127.0.0.1 at 2021-04-30 21:15:57 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"8"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 47.6ms | Allocations: 6009)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 52.1ms | Allocations: 6098)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 94.3ms | Allocations: 14422)
+Completed 200 OK in 105ms (Views: 98.0ms | ActiveRecord: 0.5ms | Allocations: 15380)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 21:15:59 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 2989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 67.3ms | Allocations: 11437)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.9ms | Allocations: 11992)
+
+
+Started GET "/articles/8" for 127.0.0.1 at 2021-04-30 21:16:02 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1920)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 9621)
+Completed 200 OK in 68ms (Views: 59.6ms | ActiveRecord: 0.7ms | Allocations: 10567)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:16:33 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 84.6ms | Allocations: 8676)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 145.4ms | Allocations: 16304)
+Completed 200 OK in 213ms (Views: 145.5ms | ActiveRecord: 8.8ms | Allocations: 25044)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 21:16:36 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 46.6ms | Allocations: 7253)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 50.3ms | Allocations: 7342)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 94.1ms | Allocations: 15675)
+Completed 200 OK in 136ms (Views: 102.3ms | ActiveRecord: 1.4ms | Allocations: 20313)
+
+
+Started POST "/articles/9/reviews" for 127.0.0.1 at 2021-04-30 21:16:40 +0300
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "comment"=>"dfddsf"}, "commit"=>"Create Review", "article_id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+  [1m[36mReview Create (4.5ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "created_at", "updated_at", "user_id", "article_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "dfddsf"], ["created_at", "2021-04-30 18:16:40.995605"], ["updated_at", "2021-04-30 18:16:40.995605"], ["user_id", 1], ["article_id", 9]]
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/articles/9
+Completed 302 Found in 82ms (ActiveRecord: 22.4ms | Allocations: 8784)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:16:41 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1917)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 52.4ms | Allocations: 9503)
+Completed 200 OK in 65ms (Views: 58.8ms | ActiveRecord: 1.9ms | Allocations: 10444)
+
+
+Started GET "/articles/9/reviews/new" for 127.0.0.1 at 2021-04-30 21:17:14 +0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"article_id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 48.1ms | Allocations: 6008)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 48.5ms | Allocations: 6097)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 111.8ms | Allocations: 14540)
+Completed 200 OK in 122ms (Views: 117.0ms | ActiveRecord: 0.5ms | Allocations: 15498)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:17:16 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:29
+  Rendered articles/show.html.erb within layouts/application (Duration: 18.2ms | Allocations: 1917)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 52.0ms | Allocations: 9500)
+Completed 200 OK in 65ms (Views: 56.9ms | ActiveRecord: 0.6ms | Allocations: 10444)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:22:35 +0300
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 1.2ms | Allocations: 336)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:31
+  Rendered articles/show.html.erb within layouts/application (Duration: 142.5ms | Allocations: 17897)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 275.1ms | Allocations: 34361)
+Completed 200 OK in 365ms (Views: 281.7ms | ActiveRecord: 5.3ms | Allocations: 45713)
+
+
+Started GET "/articles/9/reviews/3/edit" for 127.0.0.1 at 2021-04-30 21:30:48 +0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"article_id"=>"9", "id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:57:in `find_review'
+  [1m[36mCACHE Review Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 97.5ms | Allocations: 15433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 144.5ms | Allocations: 23802)
+Completed 200 OK in 178ms (Views: 151.7ms | ActiveRecord: 1.5ms | Allocations: 27181)
+
+
+Started PATCH "/articles/9/reviews/3" for 127.0.0.1 at 2021-04-30 21:30:53 +0300
+Processing by ReviewsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"4", "comment"=>"dfddsf"}, "commit"=>"Update Review", "article_id"=>"9", "id"=>"3"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:57:in `find_review'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+Completed 404 Not Found in 20ms (ActiveRecord: 0.5ms | Allocations: 3174)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=id):
+  
+app/controllers/reviews_controller.rb:30:in `update'
+Started GET "/articles/9/reviews/3/edit" for 127.0.0.1 at 2021-04-30 21:31:01 +0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"article_id"=>"9", "id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:57:in `find_review'
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 44.8ms | Allocations: 5920)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 104.9ms | Allocations: 14602)
+Completed 200 OK in 126ms (Views: 109.6ms | ActiveRecord: 0.8ms | Allocations: 16733)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:31:03 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.6ms | Allocations: 164)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:31
+  Rendered articles/show.html.erb within layouts/application (Duration: 27.4ms | Allocations: 3052)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 65.4ms | Allocations: 10644)
+Completed 200 OK in 72ms (Views: 65.3ms | ActiveRecord: 1.0ms | Allocations: 11590)
+
+
+Started GET "/articles/9/reviews/3/edit" for 127.0.0.1 at 2021-04-30 21:31:10 +0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"article_id"=>"9", "id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:57:in `find_review'
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 38.9ms | Allocations: 5727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 102.6ms | Allocations: 14052)
+Completed 200 OK in 126ms (Views: 110.9ms | ActiveRecord: 0.6ms | Allocations: 16022)
+
+
+Started PATCH "/articles/9/reviews/3" for 127.0.0.1 at 2021-04-30 21:31:14 +0300
+Processing by ReviewsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "comment"=>"AAAAA"}, "commit"=>"Update Review", "article_id"=>"9", "id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:53:in `find_article'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:57:in `find_review'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+Completed 404 Not Found in 19ms (ActiveRecord: 0.4ms | Allocations: 3174)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=id):
+  
+app/controllers/reviews_controller.rb:30:in `update'
+Started GET "/articles/9/reviews/3/edit" for 127.0.0.1 at 2021-04-30 21:36:14 +0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"article_id"=>"9", "id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reviews_controller.rb:51:in `find_article'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:51:in `find_article'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:55:in `find_review'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 59.9ms | Allocations: 5837)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 182.2ms | Allocations: 20285)
+Completed 200 OK in 301ms (Views: 182.1ms | ActiveRecord: 17.3ms | Allocations: 33311)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:38:35 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.7ms | Allocations: 161)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:31
+  Rendered articles/show.html.erb within layouts/application (Duration: 33.0ms | Allocations: 4958)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 68.4ms | Allocations: 12452)
+Completed 200 OK in 83ms (Views: 75.9ms | ActiveRecord: 1.0ms | Allocations: 13569)
+
+
+Started GET "/articles/9/reviews/3/edit" for 127.0.0.1 at 2021-04-30 21:38:38 +0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"article_id"=>"9", "id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:51:in `find_article'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:55:in `find_review'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 45.8ms | Allocations: 5727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 90.7ms | Allocations: 14051)
+Completed 200 OK in 105ms (Views: 92.7ms | ActiveRecord: 0.6ms | Allocations: 15535)
+
+
+Started PATCH "/articles/9/reviews/3" for 127.0.0.1 at 2021-04-30 21:38:51 +0300
+Processing by ReviewsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"10", "comment"=>"AAAA"}, "commit"=>"Update Review", "article_id"=>"9", "id"=>"3"}
+  [1m[36mArticle Load (15.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:51:in `find_article'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:55:in `find_review'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+  [1m[36mReview Update (2.4ms)[0m  [1m[33mUPDATE "reviews" SET "rating" = ?, "comment" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["rating", 10], ["comment", "AAAA"], ["updated_at", "2021-04-30 18:38:52.018944"], ["id", 3]]
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+Redirected to http://127.0.0.1:3000/articles/9
+Completed 302 Found in 86ms (ActiveRecord: 32.4ms | Allocations: 8876)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:38:52 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.9ms | Allocations: 153)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:31
+  Rendered articles/show.html.erb within layouts/application (Duration: 34.0ms | Allocations: 3275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 70.6ms | Allocations: 10976)
+Completed 200 OK in 81ms (Views: 74.7ms | ActiveRecord: 0.9ms | Allocations: 11919)
+
+
+Started GET "/articles/9/reviews/3/edit" for 127.0.0.1 at 2021-04-30 21:45:21 +0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"article_id"=>"9", "id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reviews_controller.rb:51:in `find_article'
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:51:in `find_article'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:55:in `find_review'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 42.9ms | Allocations: 5896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 94.3ms | Allocations: 14740)
+Completed 200 OK in 125ms (Views: 98.5ms | ActiveRecord: 1.7ms | Allocations: 17669)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-04-30 21:45:23 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 20ms (ActiveRecord: 0.2ms | Allocations: 2249)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 21:45:23 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 30.0ms | Allocations: 3025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 84.0ms | Allocations: 10716)
+Completed 200 OK in 94ms (Views: 91.8ms | ActiveRecord: 0.8ms | Allocations: 11728)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 21:45:25 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 26.0ms | Allocations: 2772)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 64.6ms | Allocations: 10544)
+Completed 200 OK in 70ms (Views: 68.2ms | ActiveRecord: 0.8ms | Allocations: 10972)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:45:26 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:63:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 3.8ms | Allocations: 344)
+  Rendered articles/show.html.erb within layouts/application (Duration: 24.9ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 65.2ms | Allocations: 10358)
+Completed 200 OK in 78ms (Views: 71.3ms | ActiveRecord: 0.9ms | Allocations: 11424)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:54:57 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:12
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:21
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 4.2ms | Allocations: 355)
+  Rendered articles/show.html.erb within layouts/application (Duration: 67.8ms | Allocations: 9987)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 107.8ms | Allocations: 18108)
+Completed 200 OK in 186ms (Views: 114.1ms | ActiveRecord: 1.4ms | Allocations: 26961)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 21:57:42 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 43.4ms | Allocations: 4768)
+  Rendered layout layouts/application.html.erb (Duration: 47.7ms | Allocations: 4832)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.1ms | Allocations: 6546)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `review' for #<ActionView::Base:0x00000000024dd8>):
+     9:     <h2><%= @article.title %></h2>
+    10:     <h3><%= @article.author %></h3>
+    11:     <h2>Rating</h2>
+    12:     <div class="review-rating" data-score="<%= review.rating  %>"> </div>
+    13:     <p><%= @article.description  %></p>
+    14: 
+    15:     </div>
+  
+app/views/articles/show.html.erb:12
+Started GET "/" for 127.0.0.1 at 2021-04-30 21:57:48 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 23.1ms | Allocations: 2988)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 63.7ms | Allocations: 11244)
+Completed 200 OK in 71ms (Views: 66.5ms | ActiveRecord: 0.7ms | Allocations: 11798)
+
+
