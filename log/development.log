@@ -5903,3 +5903,861 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 71ms (Views: 66.5ms | ActiveRecord: 0.7ms | Allocations: 11798)
 
 
+Started GET "/" for 127.0.0.1 at 2021-04-30 23:27:28 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 34.4ms | Allocations: 9177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 834)
+  Rendered layout layouts/application.html.erb (Duration: 104.0ms | Allocations: 29345)
+Completed 200 OK in 130ms (Views: 108.9ms | ActiveRecord: 2.3ms | Allocations: 33862)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 23:30:54 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (13.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 2997)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 59.2ms | Allocations: 6802)
+  Rendered layout layouts/application.html.erb (Duration: 119.6ms | Allocations: 17151)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 13.2ms | Allocations: 18366)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `session_menu' for #<ActionView::Base:0x00000000020580>
+Did you mean?  session):
+    4:     <div class="menu-item">
+    5:       <%= link_to 'Home', articles_path %>
+    6:     </div>
+    7:     <%= session_menu %>
+    8:   </div>
+    9:   <%= session_logout %>
+   10: </nav>
+  
+app/views/shared/_navbar.html.erb:7
+app/views/layouts/application.html.erb:23
+Started GET "/articles/9/reviews/3/edit" for 127.0.0.1 at 2021-04-30 23:30:58 +0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"article_id"=>"9", "id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:51:in `find_article'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:55:in `find_review'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 58.1ms | Allocations: 15564)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 46.6ms | Allocations: 4493)
+  Rendered layout layouts/application.html.erb (Duration: 126.6ms | Allocations: 26770)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.9ms | Allocations: 33433)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `session_menu' for #<ActionView::Base:0x00000000020b48>
+Did you mean?  session):
+    4:     <div class="menu-item">
+    5:       <%= link_to 'Home', articles_path %>
+    6:     </div>
+    7:     <%= session_menu %>
+    8:   </div>
+    9:   <%= session_logout %>
+   10: </nav>
+  
+app/views/shared/_navbar.html.erb:7
+app/views/layouts/application.html.erb:23
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 23:31:34 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.9ms | Allocations: 364)
+  Rendered articles/show.html.erb within layouts/application (Duration: 43.4ms | Allocations: 8773)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 290)
+  Rendered layout layouts/application.html.erb (Duration: 72.5ms | Allocations: 17289)
+Completed 200 OK in 81ms (Views: 75.7ms | ActiveRecord: 0.6ms | Allocations: 19063)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 23:34:49 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.9ms | Allocations: 343)
+  Rendered articles/show.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 2.7ms | Allocations: 282)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 11302)
+Completed 200 OK in 52ms (Views: 47.2ms | ActiveRecord: 0.4ms | Allocations: 13043)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 23:35:33 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.8ms | Allocations: 343)
+  Rendered articles/show.html.erb within layouts/application (Duration: 17.2ms | Allocations: 2703)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 286)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 11307)
+Completed 200 OK in 55ms (Views: 50.1ms | ActiveRecord: 0.4ms | Allocations: 13048)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 23:35:37 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.4ms | Allocations: 148)
+  Rendered articles/show.html.erb within layouts/application (Duration: 14.1ms | Allocations: 2066)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 9848)
+Completed 200 OK in 45ms (Views: 40.3ms | ActiveRecord: 0.4ms | Allocations: 10790)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 23:36:08 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.8ms | Allocations: 343)
+  Rendered articles/show.html.erb within layouts/application (Duration: 18.0ms | Allocations: 2703)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 289)
+  Rendered layout layouts/application.html.erb (Duration: 43.9ms | Allocations: 11310)
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 0.5ms | Allocations: 13051)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 23:36:12 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 3010)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 10848)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.5ms | Allocations: 11415)
+
+
+Started GET "/articles?category=Lifestyle" for 127.0.0.1 at 2021-04-30 23:36:21 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Lifestyle"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Lifestyle"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = ? ORDER BY created_at DESC[0m  [["category_id", 1]]
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 34.2ms | Allocations: 2272)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 58.5ms | Allocations: 10103)
+Completed 200 OK in 66ms (Views: 61.2ms | ActiveRecord: 0.7ms | Allocations: 11207)
+
+
+Started GET "/articles?category=Technology" for 127.0.0.1 at 2021-04-30 23:36:23 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Technology"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Technology"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = ? ORDER BY created_at DESC[0m  [["category_id", 2]]
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1907)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 9738)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.8ms | Allocations: 10731)
+
+
+Started GET "/articles?category=Health" for 127.0.0.1 at 2021-04-30 23:36:25 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Health"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Health"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 693)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 113)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 8512)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 0.4ms | Allocations: 9524)
+
+
+Started GET "/articles?category=Cooking" for 127.0.0.1 at 2021-04-30 23:36:29 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Cooking"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Cooking"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 8507)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.3ms | Allocations: 9500)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-30 23:41:43 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 3.6ms | Allocations: 281)
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 11624)
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 0.5ms | Allocations: 12859)
+
+
+Started GET "/articles?category=Health" for 127.0.0.1 at 2021-04-30 23:41:46 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Health"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Health"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 8516)
+Completed 200 OK in 34ms (Views: 28.1ms | ActiveRecord: 0.4ms | Allocations: 9510)
+
+
+Started GET "/articles?category=Lifestyle" for 127.0.0.1 at 2021-04-30 23:41:49 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Lifestyle"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Lifestyle"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = ? ORDER BY created_at DESC[0m  [["category_id", 1]]
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 10083)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 0.7ms | Allocations: 11076)
+
+
+Started GET "/articles?category=Cooking" for 127.0.0.1 at 2021-04-30 23:41:51 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Cooking"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Cooking"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 8507)
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 0.4ms | Allocations: 9500)
+
+
+Started GET "/articles?category=Cooking" for 127.0.0.1 at 2021-04-30 23:42:19 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Cooking"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Cooking"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 8524)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.3ms | Allocations: 9518)
+
+
+Started GET "/articles?category=Cooking" for 127.0.0.1 at 2021-04-30 23:42:21 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Cooking"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Cooking"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 8524)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.3ms | Allocations: 9518)
+
+
+Started GET "/articles?category=Cooking" for 127.0.0.1 at 2021-04-30 23:42:22 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Cooking"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Cooking"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 8524)
+Completed 200 OK in 34ms (Views: 28.5ms | ActiveRecord: 0.4ms | Allocations: 9517)
+
+
+Started GET "/articles?class=logo+pl-3" for 127.0.0.1 at 2021-04-30 23:42:23 +0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"class"=>"logo pl-3"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 2772)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 10592)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.5ms | Allocations: 11021)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-04-30 23:43:18 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 0.8ms | Allocations: 344)
+  Rendered articles/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 2708)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 10496)
+Completed 200 OK in 46ms (Views: 40.2ms | ActiveRecord: 0.4ms | Allocations: 11568)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-01 00:00:15 +0300
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (3.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 2989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 12395)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 3.9ms | Allocations: 14205)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/dean/Documents/github/article_app/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/devise-4.7.3/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actiontext-6.1.3.1/app/views"
+  * "/home/dean/.rvm/gems/ruby-2.7.0/gems/actionmailbox-6.1.3.1/app/views"
+):
+    60:     <%= yield %>
+    61:         </div>
+    62:         <div id='footer' class='d-flex justify-content-center'>
+    63:         <%= render 'shared/footer' %>
+    64:       </div>
+    65: 
+    66:     <p class="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:63
+Started GET "/" for 127.0.0.1 at 2021-05-01 00:02:44 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.1ms | Allocations: 2988)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 55.9ms | Allocations: 11154)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.5ms | Allocations: 12387)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-05-01 00:02:52 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (3.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 3.2ms | Allocations: 344)
+  Rendered articles/show.html.erb within layouts/application (Duration: 18.7ms | Allocations: 2739)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 10348)
+Completed 200 OK in 53ms (Views: 45.0ms | ActiveRecord: 3.9ms | Allocations: 11448)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-01 00:03:10 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 2772)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (3.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 10425)
+Completed 200 OK in 43ms (Views: 38.4ms | ActiveRecord: 4.1ms | Allocations: 10855)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-05-01 00:03:13 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 610)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 60.4ms | Allocations: 9742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 86.0ms | Allocations: 17305)
+Completed 200 OK in 113ms (Views: 94.7ms | ActiveRecord: 0.7ms | Allocations: 23005)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-05-01 00:03:19 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chris@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "chris@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 412ms (ActiveRecord: 0.3ms | Allocations: 4062)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-01 00:03:19 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 2771)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 11253)
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.9ms | Allocations: 11692)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-05-01 00:03:23 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:5
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 7.7ms | Allocations: 1072)
+  Rendered articles/show.html.erb within layouts/application (Duration: 21.7ms | Allocations: 3018)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 10601)
+Completed 200 OK in 55ms (Views: 48.4ms | ActiveRecord: 0.7ms | Allocations: 11550)
+
+
+Started GET "/articles/9/reviews/3/edit" for 127.0.0.1 at 2021-05-01 00:03:41 +0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"article_id"=>"9", "id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:51:in `find_article'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:55:in `find_review'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 37.8ms | Allocations: 5903)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 69.7ms | Allocations: 14253)
+Completed 200 OK in 82ms (Views: 72.5ms | ActiveRecord: 0.6ms | Allocations: 16340)
+
+
+Started GET "/articles/9/edit" for 127.0.0.1 at 2021-05-01 00:04:17 +0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/articles_controller.rb:40:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/edit.html.erb within layouts/application (Duration: 52.1ms | Allocations: 9060)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 79.5ms | Allocations: 16503)
+Completed 200 OK in 97ms (Views: 82.1ms | ActiveRecord: 0.4ms | Allocations: 19269)
+
+
+Started PATCH "/articles/9" for 127.0.0.1 at 2021-05-01 00:12:33 +0300
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"category_id"=>"1", "article_img"=>#<ActionDispatch::Http::UploadedFile:0x000055825e47c1c0 @tempfile=#<Tempfile:/tmp/RackMultipart20210501-10838-19kiiwk.jpeg>, @original_filename="ca-times.brightspotcdn.com.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[article_img]\"; filename=\"ca-times.brightspotcdn.com.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Lifestyle", "description"=>"This article is designed to give tips to readers about how they can improve or augment actions in their life to have a healthy lifestyle; it is not meant to be all inclusive but will include major components that are considered to be parts of a lifestyle that lead to good health. In addition to the tips about what people should do for healthy living, the article will mention some of the tips about avoiding actions (the don'ts) that lead to unhealthy living.", "author"=>"lifestyle"}, "commit"=>"Update Article", "id"=>"9"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+[paperclip] Trying to link /tmp/RackMultipart20210501-10838-19kiiwk.jpeg to /tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg
+[paperclip] Trying to link /tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg to /tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-1xt5edw.jpeg
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-1xt5edw.jpeg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg[0]' -auto-orient -resize "250x350>" '/tmp/b122bb366a12810d80ee730b93114b2d20210501-10838-1jwajki'
+[paperclip] Trying to link /tmp/b122bb366a12810d80ee730b93114b2d20210501-10838-1jwajki to /tmp/0e4736117df0491135a5260c9c8baf0120210501-10838-1vf319b
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg[0]' -auto-orient -resize "325x475>" '/tmp/b122bb366a12810d80ee730b93114b2d20210501-10838-15rttba'
+[paperclip] Trying to link /tmp/b122bb366a12810d80ee730b93114b2d20210501-10838-15rttba to /tmp/54ffdc72f98c3bcf0c26cae782f9a27520210501-10838-u7eptv
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+[paperclip] Trying to link /tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-yp7c4o.jpeg to /tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-chzxs4.jpeg
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/383e75e5faada74348cc9d6eb19e037320210501-10838-chzxs4.jpeg'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "description" = ?, "updated_at" = ?, "article_img_file_name" = ?, "article_img_file_size" = ?, "article_img_updated_at" = ? WHERE "articles"."id" = ?[0m  [["description", "This article is designed to give tips to readers about how they can improve or augment actions in their life to have a healthy lifestyle; it is not meant to be all inclusive but will include major components that are considered to be parts of a lifestyle that lead to good health. In addition to the tips about what people should do for healthy living, the article will mention some of the tips about avoiding actions (the don'ts) that lead to unhealthy living."], ["updated_at", "2021-04-30 21:12:33.334555"], ["article_img_file_name", "ca-times.brightspotcdn.com.jpeg"], ["article_img_file_size", 157071], ["article_img_updated_at", "2021-04-30 21:12:33.111758"], ["id", 9]]
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+[paperclip] deleting /home/dean/Documents/github/article_app/public/system/articles/article_imgs/000/000/009/original/MOYI-5-EN-cover-900x1157.jpg
+[paperclip] deleting /home/dean/Documents/github/article_app/public/system/articles/article_imgs/000/000/009/article_index/MOYI-5-EN-cover-900x1157.jpg
+[paperclip] deleting /home/dean/Documents/github/article_app/public/system/articles/article_imgs/000/000/009/article_show/MOYI-5-EN-cover-900x1157.jpg
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+Redirected to http://127.0.0.1:3000/articles/9
+Completed 302 Found in 268ms (ActiveRecord: 7.6ms | Allocations: 24635)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-05-01 00:12:33 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:5
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 7.3ms | Allocations: 1092)
+  Rendered articles/show.html.erb within layouts/application (Duration: 20.9ms | Allocations: 3056)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 10652)
+Completed 200 OK in 50ms (Views: 45.6ms | ActiveRecord: 0.8ms | Allocations: 11599)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-01 00:12:40 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 2772)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | Allocations: 11205)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.8ms | Allocations: 11638)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-05-01 00:13:11 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (3.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:5
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 7.7ms | Allocations: 1067)
+  Rendered articles/show.html.erb within layouts/application (Duration: 20.9ms | Allocations: 3010)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 10593)
+Completed 200 OK in 48ms (Views: 38.3ms | ActiveRecord: 3.7ms | Allocations: 11542)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-01 00:14:42 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 24.9ms | Allocations: 2772)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 50.8ms | Allocations: 11230)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.7ms | Allocations: 11664)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-05-01 00:35:38 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:5
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 7.4ms | Allocations: 1089)
+  Rendered articles/show.html.erb within layouts/application (Duration: 16.1ms | Allocations: 3064)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 10672)
+Completed 200 OK in 53ms (Views: 44.1ms | ActiveRecord: 1.2ms | Allocations: 12244)
+
+
+Started GET "/articles/9/edit" for 127.0.0.1 at 2021-05-01 00:35:41 +0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/articles_controller.rb:40:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/edit.html.erb within layouts/application (Duration: 27.4ms | Allocations: 6369)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | Allocations: 13802)
+Completed 200 OK in 72ms (Views: 55.6ms | ActiveRecord: 0.7ms | Allocations: 16445)
+
+
+Started PATCH "/articles/9" for 127.0.0.1 at 2021-05-01 00:35:49 +0300
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"category_id"=>"1", "article_img"=>#<ActionDispatch::Http::UploadedFile:0x000055825df68da0 @tempfile=#<Tempfile:/tmp/RackMultipart20210501-10838-o4js8z.jpg>, @original_filename="MOYI-5-EN-cover-900x1157.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[article_img]\"; filename=\"MOYI-5-EN-cover-900x1157.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Lifestyle", "description"=>"This article is designed to give tips to readers about how they can improve or augment actions in their life to have a healthy lifestyle; it is not meant to be all inclusive but will include major components that are considered to be parts of a lifestyle that lead to good health. In addition to the tips about what people should do for healthy living, the article will mention some of the tips about avoiding actions (the don'ts) that lead to unhealthy living.", "author"=>"lifestyle"}, "commit"=>"Update Article", "id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+[paperclip] Trying to link /tmp/RackMultipart20210501-10838-o4js8z.jpg to /tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg
+[paperclip] Trying to link /tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg to /tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-1xygseo.jpg
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-1xygseo.jpg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg[0]' -auto-orient -resize "250x350>" '/tmp/7e19106915980527830c565ad82fe22e20210501-10838-1nd9zis'
+[paperclip] Trying to link /tmp/7e19106915980527830c565ad82fe22e20210501-10838-1nd9zis to /tmp/c3039a3e39a3ffc0a7c8562250d78f1320210501-10838-t836bv
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg[0]' -auto-orient -resize "325x475>" '/tmp/7e19106915980527830c565ad82fe22e20210501-10838-lsejhf'
+[paperclip] Trying to link /tmp/7e19106915980527830c565ad82fe22e20210501-10838-lsejhf to /tmp/b26177cd63dbdad88da8b03ff104b80820210501-10838-8xl56x
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+[paperclip] Trying to link /tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-172brw9.jpg to /tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-c957hr.jpg
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/7aa323660c61d91c29a9cda5cfc645a520210501-10838-c957hr.jpg'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "updated_at" = ?, "article_img_file_name" = ?, "article_img_file_size" = ?, "article_img_updated_at" = ? WHERE "articles"."id" = ?[0m  [["updated_at", "2021-04-30 21:35:49.908268"], ["article_img_file_name", "MOYI-5-EN-cover-900x1157.jpg"], ["article_img_file_size", 161882], ["article_img_updated_at", "2021-04-30 21:35:49.533311"], ["id", 9]]
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+[paperclip] deleting /home/dean/Documents/github/article_app/public/system/articles/article_imgs/000/000/009/original/ca-times.brightspotcdn.com.jpeg
+[paperclip] deleting /home/dean/Documents/github/article_app/public/system/articles/article_imgs/000/000/009/article_index/ca-times.brightspotcdn.com.jpeg
+[paperclip] deleting /home/dean/Documents/github/article_app/public/system/articles/article_imgs/000/000/009/article_show/ca-times.brightspotcdn.com.jpeg
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:45:in `update'
+Redirected to http://127.0.0.1:3000/articles/9
+Completed 302 Found in 422ms (ActiveRecord: 6.3ms | Allocations: 21952)
+
+
+Started GET "/articles/9" for 127.0.0.1 at 2021-05-01 00:35:49 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:64:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:11
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+  ↳ app/views/articles/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:5
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 8.7ms | Allocations: 1068)
+  Rendered articles/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 3011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 10594)
+Completed 200 OK in 46ms (Views: 42.6ms | ActiveRecord: 0.5ms | Allocations: 11539)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-01 00:35:52 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 2772)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:43
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 11205)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.7ms | Allocations: 11638)
+
+
