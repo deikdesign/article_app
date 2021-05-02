@@ -1,0 +1,22 @@
+<h1> Index view </h1>
+
+<h1 class="current-category"><%= params[:category] %></h1>
+
+<% if @articles.count == 0 %>
+    <h1> There are no books currently in this category </h1>
+    <%else%>
+
+    <div class="row" %>
+
+    <% @articles.each do |article| %>
+    <div class="col-md-3">
+    <a href="/articles/<%= article.id %>">
+        <%= image_tag article.article_img.url(:article_index), class: "article"%>
+    </a>
+    </div>
+    <% end %>
+ </div>
+<% end %>
+
+
+
