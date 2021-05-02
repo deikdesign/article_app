@@ -25,6 +25,7 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'paperclip', '~> 6.1'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rubocop-rails', require: false
 gem 'sassc-rails', '>= 2.1.0'
 gem 'simple_form', '~> 5.1'
 
@@ -38,7 +39,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec', '~> 3.9'
-  gem 'rspec-rails'
 end
 
 group :development do
