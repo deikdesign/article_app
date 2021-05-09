@@ -11205,3 +11205,65 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 98ms (Views: 93.6ms | ActiveRecord: 0.8ms | Allocations: 14758)
 
 
+Started GET "/" for 127.0.0.1 at 2021-05-10 02:48:01 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 49.6ms | Allocations: 9291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.9ms | Allocations: 116)
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:59
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 2.0ms | Allocations: 114)
+  Rendered layouts/_footer.html.erb (Duration: 5.4ms | Allocations: 610)
+  Rendered layout layouts/application.html.erb (Duration: 1415.1ms | Allocations: 134123)
+Completed 200 OK in 1460ms (Views: 1422.7ms | ActiveRecord: 4.1ms | Allocations: 140015)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-10 02:49:47 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 3000)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.4ms | Allocations: 109)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:59
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.4ms | Allocations: 112)
+  Rendered layouts/_footer.html.erb (Duration: 7.3ms | Allocations: 597)
+  Rendered layout layouts/application.html.erb (Duration: 68.1ms | Allocations: 12396)
+Completed 200 OK in 79ms (Views: 76.7ms | ActiveRecord: 0.7ms | Allocations: 13668)
+
+
+Started GET "/" for 127.0.0.1 at 2021-05-10 02:50:00 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.5ms | Allocations: 2780)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.2ms | Allocations: 39)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:59
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 60.7ms | Allocations: 10960)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.8ms | Allocations: 11397)
+
+
