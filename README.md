@@ -10,8 +10,10 @@ Social media website
 
 ![alt text](./app/assets/images/article_app.JPG "Preview Img")
 
-## Live Demo
+## LIVE DEMO
 - Live Demo: [heroku](https://article-application.herokuapp.com)
+
+
 
 ## Built With
 
