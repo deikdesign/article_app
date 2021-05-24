@@ -15,7 +15,7 @@ Social media website
 
 - Ruby v2.7.0
 
-
+## LIVE DEMO [heroku](https://article-application.herokuapp.com/)
 
 
 ### Prerequisites
