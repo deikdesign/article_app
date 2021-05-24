@@ -2,18 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
-  
   it 'Has a title' do
     article = Article.new(
       title: '',
       description: '',
-      author: '',
+      author: ''
     )
 
     expect(article).to_not be_valid
     article.title = 'A valid Title'
     expect(article).to_not be_valid
-    
   end
 
   it 'Has a Description' do
@@ -37,5 +35,4 @@ RSpec.describe Article, type: :model do
     article.title = ''
     expect(article).to_not be_valid
   end
-
 end
