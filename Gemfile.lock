@@ -60,6 +60,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    acts_as_votable (0.10.0)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
@@ -96,6 +97,8 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.0)
+    font-awesome-rails (4.7.0.7)
+      railties (>= 3.2, < 7)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.10)
@@ -286,11 +289,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  acts_as_votable (~> 0.10.0)
   bootsnap (>= 1.4.4)
   bootstrap-sass (~> 3.4, >= 3.4.1)
   byebug
   capybara (>= 3.26)
   devise (~> 4.7, >= 4.7.3)
+  font-awesome-rails (~> 4.7, >= 4.7.0.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   paperclip (~> 6.1)

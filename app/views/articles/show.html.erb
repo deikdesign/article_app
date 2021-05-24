@@ -3,6 +3,34 @@
         <div class="col-md-4">
 
 <%= image_tag @article.article_img.url(:article_show), class: "article-s" %>
+
+             <br>
+                <hr>
+                <br>
+               
+        <% @article = Article.find(params[:id]) do %>
+
+            <div class="caption" style="text-align:center;">
+                <%= @article.title  %>
+              <%= link_to like_article_path(params[:id]), class: "like", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align" %>
+                  <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= @article.get_upvotes.size %></span>
+                  </button>
+                  <% end %>
+
+                  <%= link_to unlike_article_path(params[:id]), class: "like", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align" %>
+                  <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= @article.get_downvotes.size %></span>
+                  </button>
+                  <% end %>
+                      </div>
+        <% end %>
+                <br>
+                <hr>
+                
+
     </div>
 
         <div class="col-md-8">

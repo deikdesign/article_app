@@ -4,9 +4,18 @@ Rails.application.routes.draw do
 
   resources :articles do
   resources :reviews
+  
 
   end
 
   root 'articles#index'
+
+  resources :articles do
+    member do
+      put "like" => "articles#upvote"
+      put "unlike" => "articles#downvote"
+
+    end
+  end
 
 end
