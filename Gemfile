@@ -6,7 +6,7 @@ ruby '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 
-#gem 'postgresql', '~> 1.0'
+# gem 'postgresql', '~> 1.0'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
@@ -22,15 +22,15 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'paperclip', '~> 6.1'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rubocop-rails', require: false
 gem 'sassc-rails', '>= 2.1.0'
 gem 'simple_form', '~> 5.1'
-gem 'acts_as_votable', '~> 0.10.0'
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
