@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :find_article, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[new edit]
+  before_action :find_most_voted_article, only: :index
+  before_action :authenticate_user!, only: %i[new edit create destroy]
 
   def index
     if params[:category].blank?
@@ -63,6 +64,12 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def find_most_voted_article
+    with_voted = Article.all
+    @most_voted = with_voted.sort_by(&:cached_votes_up).reverse.first
+    logger.info(@most_voted)
+  end
 
   def article_params
     params.require(:article).permit(:title, :description, :author, :category_id, :article_img)

@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :find_article
   before_action :find_review, only: %i[edit update destroy]
-  before_action :authenticate_user!, only: %i[new edit]
+  before_action :authenticate_user!, only: %i[new edit create destroy]
 
   def new
     @review = Review.new

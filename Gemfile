@@ -26,6 +26,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 gem 'paperclip', '~> 6.1'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rubocop-rails', require: false
@@ -57,13 +58,24 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
+  gem 'faker'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'codeclimate-test-reporter'
+  gem 'coveralls', require: false
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'shoulda-matchers'
   gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 group :development, :test do
   gem 'rspec-rails'
