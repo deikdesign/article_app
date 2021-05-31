@@ -24061,3 +24061,41 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 152ms (Views: 98.0ms | ActiveRecord: 22.1ms | Allocations: 32948)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-01 00:32:24 +0300
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (10.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:70:in `sort_by'
+
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:57
+  Rendered articles/index.html.erb within layouts/application (Duration: 26.2ms | Allocations: 3092)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/dean/Documents/github/article_app/public/packs
+[Webpacker] Hash: abefd7f992470d7f4277
+Version: webpack 4.46.0
+Time: 2140ms
+Built at: 06/01/2021 12:32:34 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-4ea27029e8ce811a58b3.js    125 KiB  application  [emitted] [immutable]  application
+js/application-4ea27029e8ce811a58b3.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-4ea27029e8ce811a58b3.js js/application-4ea27029e8ce811a58b3.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 543 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layouts/_logo.html.erb (Duration: 6.6ms | Allocations: 116)
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 3.4ms | Allocations: 114)
+  Rendered layouts/_footer.html.erb (Duration: 5.8ms | Allocations: 622)
+  Rendered layout layouts/application.html.erb (Duration: 9733.4ms | Allocations: 117768)
+Completed 200 OK in 9807ms (Views: 9715.6ms | ActiveRecord: 34.8ms | Allocations: 123995)
+
+

@@ -32,25 +32,22 @@ a,
 }
 
 body {
-  color: #444444;
-  background: #000000;
-  
+  color: #444;
+  background: #000;
 }
 
-.top_slider{
+.top_slider {
   color: #fd6001;
-  font-weight: 2em;
-
-
+  font-weight: normal;
 }
 
-.category_list{
+.category_list {
   color: #fd6001;
   font-size: 16px;
   font-weight: bold;
 }
 
-.mv-section{
+.mv-section {
   color: #fd6001;
   font-size: 30px;
   font-weight: 400;
@@ -58,7 +55,7 @@ body {
   text-align: center;
 }
 
-.border-style{
+.border-style {
   width: 70%;
   border-bottom-style: solid;
   border-bottom-color: white;
@@ -68,18 +65,22 @@ body {
 }
 
 .navbar {
-    margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
 }
-.container{
+
+.container {
   padding-left: 7%;
   padding-right: 7%;
 }
 
 div.holder {
   width: 100%;
-  background: #ffffff;
+  background: #fff;
   padding-bottom: 70px;
 }
-*, ::after, ::before {
-    box-sizing: none;
+
+*,
+::after,
+::before {
+  box-sizing: content-box;
 }
