@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, only: %i[show edit update destroy]
+  before_action :find_article, only: %i[show edit update destroy upvote downvote]
   before_action :find_most_voted_article, only: :index
   before_action :authenticate_user!, only: %i[new edit create destroy]
 
@@ -52,14 +52,16 @@ class ArticlesController < ApplicationController
   end
 
   def upvote
-    @article = Article.find(params[:id])
     @article.upvote_from current_user
+    redirect_to article_path(@article)
+  rescue StandardError
     redirect_to article_path(@article)
   end
 
   def downvote
-    @article = Article.find(params[:id])
     @article.downvote_from current_user
+    redirect_to article_path(@article)
+  rescue StandardError
     redirect_to article_path(@article)
   end
 
