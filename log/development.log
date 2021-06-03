@@ -25381,3 +25381,31 @@ Entrypoint application = js/application-4ea27029e8ce811a58b3.js js/application-4
 Completed 200 OK in 5519ms (Views: 5423.1ms | ActiveRecord: 44.4ms | Allocations: 148220)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-03 22:13:02 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (3.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:72:in `sort_by'
+#<Article:0x00007f9e5471b318>
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:57
+  [1m[36mArticle Load (3.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:63
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/views/articles/index.html.erb:89
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (Duration: 41.1ms | Allocations: 7765)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.3ms | Allocations: 114)
+  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.4ms | Allocations: 114)
+  Rendered layouts/_footer.html.erb (Duration: 5.5ms | Allocations: 610)
+  Rendered layout layouts/application.html.erb (Duration: 162.7ms | Allocations: 31086)
+Completed 200 OK in 238ms (Views: 145.3ms | ActiveRecord: 39.0ms | Allocations: 47063)
+
+
