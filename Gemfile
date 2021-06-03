@@ -32,7 +32,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rubocop-rails', require: false
 gem 'sassc-rails', '>= 2.1.0'
 gem 'simple_form', '~> 5.1'
-gem 'rails_12factor', '~> 0.0.3'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
