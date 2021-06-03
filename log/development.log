@@ -25281,3 +25281,59 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 64ms (Views: 38.4ms | ActiveRecord: 19.4ms | Allocations: 13806)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-03 20:02:41 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (5.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:72:in `sort_by'
+#<Article:0x00007f968c712918>
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:57
+  [1m[36mArticle Load (2.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:63
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/views/articles/index.html.erb:89
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (Duration: 46.8ms | Allocations: 7763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.7ms | Allocations: 114)
+  [1m[36mCategory Load (4.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 1.2ms | Allocations: 114)
+  Rendered layouts/_footer.html.erb (Duration: 5.8ms | Allocations: 622)
+  Rendered layout layouts/application.html.erb (Duration: 192.1ms | Allocations: 30993)
+Completed 200 OK in 264ms (Views: 174.0ms | ActiveRecord: 35.9ms | Allocations: 46856)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-03 21:50:32 +0300
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (3.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:72:in `sort_by'
+#<Article:0x00007f345071bbd8>
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:57
+  [1m[36mArticle Load (2.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:63
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/views/articles/index.html.erb:89
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (Duration: 43.5ms | Allocations: 7763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.3ms | Allocations: 114)
+  [1m[36mCategory Load (3.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.4ms | Allocations: 114)
+  Rendered layouts/_footer.html.erb (Duration: 7.5ms | Allocations: 622)
+  Rendered layout layouts/application.html.erb (Duration: 160.2ms | Allocations: 30975)
+Completed 200 OK in 234ms (Views: 141.9ms | ActiveRecord: 33.8ms | Allocations: 46894)
+
+
