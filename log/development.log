@@ -25129,3 +25129,155 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 64ms (Views: 48.2ms | ActiveRecord: 8.6ms | Allocations: 13804)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-02 00:13:22 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:72:in `sort_by'
+#<Article:0x00007feab4723e80>
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:57
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:63
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/views/articles/index.html.erb:89
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (Duration: 41.3ms | Allocations: 7763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 2.1ms | Allocations: 114)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.7ms | Allocations: 114)
+  Rendered layouts/_footer.html.erb (Duration: 4.0ms | Allocations: 622)
+  Rendered layout layouts/application.html.erb (Duration: 209.2ms | Allocations: 36138)
+Completed 200 OK in 286ms (Views: 176.6ms | ActiveRecord: 46.6ms | Allocations: 52061)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2021-06-02 00:14:12 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (3.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:81:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/show.html.erb:11
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/views/articles/show.html.erb:18
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/views/articles/show.html.erb:25
+  [1m[36mCategory Load (3.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:39
+  [1m[36mReview Load (3.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = $1[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:48
+  Rendered collection of templates [0 times] (Duration: 2.5ms | Allocations: 12)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:59
+  Rendered articles/show.html.erb within layouts/application (Duration: 84.5ms | Allocations: 11980)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 39)
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 112.6ms | Allocations: 20045)
+Completed 200 OK in 126ms (Views: 93.4ms | ActiveRecord: 25.9ms | Allocations: 21433)
+
+
+Started PUT "/articles/1/like" for 127.0.0.1 at 2021-06-02 00:14:14 +0300
+Processing by ArticlesController#upvote as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mArticle Load (2.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:81:in `find_article'
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4[0m  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 1], ["voter_type", "User"]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[36mActsAsVotable::Vote Load (4.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4 ORDER BY "votes"."id" DESC LIMIT $5[0m  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 1], ["voter_type", "User"], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("votes"."vote_weight") FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("votes"."vote_weight") FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT SUM("votes"."vote_weight") FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT SUM("votes"."vote_weight") FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/controllers/articles_controller.rb:55:in `upvote'
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 85ms (ActiveRecord: 26.1ms | Allocations: 13263)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2021-06-02 00:14:15 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:81:in `find_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mArticle Load (4.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/show.html.erb:11
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/views/articles/show.html.erb:18
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/views/articles/show.html.erb:25
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:39
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = $1[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:48
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 10)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:59
+  Rendered articles/show.html.erb within layouts/application (Duration: 40.7ms | Allocations: 5447)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 39)
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 2.2ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 67.7ms | Allocations: 13602)
+Completed 200 OK in 75ms (Views: 54.0ms | ActiveRecord: 16.1ms | Allocations: 14731)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-02 00:14:17 +0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (2.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:72:in `sort_by'
+#<Article:0x00007feab4304a70>
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:57
+  [1m[36mArticle Load (3.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:63
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/views/articles/index.html.erb:89
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (Duration: 23.1ms | Allocations: 3543)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 39)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 3.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_footer.html.erb (Duration: 3.6ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | Allocations: 12577)
+Completed 200 OK in 64ms (Views: 38.4ms | ActiveRecord: 19.4ms | Allocations: 13806)
+
+
