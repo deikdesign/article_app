@@ -25337,3 +25337,47 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 234ms (Views: 141.9ms | ActiveRecord: 33.8ms | Allocations: 46894)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-03 22:00:33 +0300
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (3.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:72:in `sort_by'
+#<Article:0x00005584a91bb3d0>
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:57
+  [1m[36mArticle Load (2.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:63
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", true]]
+  ↳ app/views/articles/index.html.erb:89
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["vote_flag", false]]
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (Duration: 49.2ms | Allocations: 7751)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/dean/Documents/github/article_app/public/packs
+[Webpacker] Hash: abefd7f992470d7f4277
+Version: webpack 4.46.0
+Time: 1638ms
+Built at: 06/03/2021 10:00:39 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-4ea27029e8ce811a58b3.js    125 KiB  application  [emitted] [immutable]  application
+js/application-4ea27029e8ce811a58b3.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-4ea27029e8ce811a58b3.js js/application-4ea27029e8ce811a58b3.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 543 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layouts/_logo.html.erb (Duration: 0.5ms | Allocations: 116)
+  [1m[36mCategory Load (3.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:66
+  Rendered layouts/_logo.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layouts/_social.html.erb (Duration: 0.3ms | Allocations: 114)
+  Rendered layouts/_footer.html.erb (Duration: 3.5ms | Allocations: 610)
+  Rendered layout layouts/application.html.erb (Duration: 5446.3ms | Allocations: 132268)
+Completed 200 OK in 5519ms (Views: 5423.1ms | ActiveRecord: 44.4ms | Allocations: 148220)
+
+
