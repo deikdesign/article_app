@@ -80,12 +80,11 @@ div.holder {
     
   <%if @most_voted%> 
       <div class="col-sm-12 col-md-4 p-2" style="display: inline-block;">
-      <%= image_tag @most_voted.article_img.url(:article_show), style: "height: 100%; width: 100%; object-fit: cover;" %>
+      <%= image_tag @most_voted.article_img.url(:article_show), style: "height: 50%; width: 100%; object-fit: cover;" %>
           <a href="/articles/<%= @most_voted.id %>" style="z-index: 999;
                                                       margin: 0 auto;
                                                       left: 0;
-                                                      right: 0;
-                                                      top: 40%;
+                                                      right: 0; 
                                                       text-align: center;"><p class="mv-section">Most Voted</p></a>
         </div>
   <%else%>
