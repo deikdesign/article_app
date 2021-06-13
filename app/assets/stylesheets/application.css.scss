@@ -32,8 +32,9 @@ a,
 }
 
 body {
-  color: #444;
-  background: #000;
+  color: #444444;
+  background: #000000;
+
 }
 
 .top_slider {
@@ -83,4 +84,12 @@ div.holder {
 ::after,
 ::before {
   box-sizing: content-box;
+}
+
+.mv-section {
+  color: #fd6001;
+  font-size: 30px;
+  font-weight: 400;
+  padding-top: 70%;
+  text-align: center;
 }
