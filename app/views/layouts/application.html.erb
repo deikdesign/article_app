@@ -27,8 +27,6 @@
          <%= link_to "Article Review", root_path, class: "navbar-brand" %>
         
       </div>
-     
-        
 
 
       <ul class="nav navbar-nav d-flex flex-row">
@@ -43,17 +41,17 @@
        
         <% end %>
 
+        <% if @cats.any? %> 
+        <% @cats.each do |cat| %>
+          <li class="nav-item">
+            <a href="/articles?category=<%=cat.name%>"> <%=cat.name%></a>
+          </li>
+      <% end %>
+      <% end %>
+
+  
       <li class="nav-item">
-      <a href="https://article-application.herokuapp.com/articles?category=Lifestyle"> Lifestyle</a>
-      </li>
-      <li class="nav-item">
-      <a href="https://article-application.herokuapp.com/articles?category=Cooking"> Cooking</a>
-      </li>
-        <li class="nav-item">
-      <a href="https://article-application.herokuapp.com/articles?category=Technology"> Technology</a>
-      </li>
-      <li class="nav-item">
-      <a href="https://article-application.herokuapp.com/articles?category=Photography"> Photography</a>
+        <a href="/categories"> Categories</a>
       </li>
 
       </ul>

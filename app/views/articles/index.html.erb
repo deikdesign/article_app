@@ -32,8 +32,8 @@ body {
   border-bottom-style: solid;
   border-bottom-color: white;
   border-bottom-width: 7px;
-  padding-top: 30px;
   margin-left: 10px;
+  z-index: 999;
 }
 
 .navbar {
@@ -80,12 +80,12 @@ div.holder {
     
   <%if @most_voted%> 
       <div class="col-sm-12 col-md-4 p-2" style="display: inline-block;">
-      <%= image_tag @most_voted.article_img.url(:article_show), style: "height: 50%; width: 100%; object-fit: cover;" %>
+      <%= image_tag @most_voted.article_img.url(:article_show), style: "height: 100%; width: 100%; object-fit: cover;" %>
           <a href="/articles/<%= @most_voted.id %>" style="z-index: 999;
                                                       margin: 0 auto;
                                                       left: 0;
                                                       right: 0;
-                                                      top: -20%;
+                                                      top: 40%;
                                                       text-align: center;"><p class="mv-section">Most Voted</p></a>
         </div>
   <%else%>
@@ -99,31 +99,44 @@ div.holder {
     </div>
 
 
-    <div class="d-flex flex-row">
-  <div class="p-1" style="background: url('../assets/lf.jpg') no-repeat; height: 200px; width: 300px;">
-  <a href="https://article-application.herokuapp.com/articles?category=Lifestyle" style="text-decoration: none;"> <p class="category_list border-style">Lifestyle</p></a></div>
-  <div class="p-1" style="background: url('../assets/cooking.jpg') no-repeat; height: 200px; width: 300px;">
-  <a href="https://article-application.herokuapp.com/articles?category=Cooking" style="text-decoration: none;"> <p class="category_list border-style">Cooking</p></a></div>
-  <div class="p-1" style="background: url('../assets/article.jpg') no-repeat; height: 200px; width: 300px;">
-  <a href="https://article-application.herokuapp.com/articles?category=Technology" style="text-decoration: none;"> <p class="category_list border-style">Technology</p></a></div>
-  <div class="p-1" style="background: url('../assets/photo.jpg') no-repeat; height: 200px; width: 300px;">
-  <a href="https://article-application.herokuapp.com/articles?category=Photography" style="text-decoration: none;"> <p class="category_list border-style">Photography</p></a></div>
+    <div class="d-flex flex-row" style="position:relative;">
+
+    <% if @cats.any? %> 
+        <% @cats.each do |cat| %>
+
+            <div class="p-1" style="display: inline-block;
+                    position: relative; height: 180px; width: 250px;">
+                  <img src="<%=['../assets/lf.jpg','../assets/cooking.jpg','../assets/article.jpg',
+                  '../assets/photo.jpg','../assets/photo.jpg'].sample%>",
+                   style="height: 100%; width: 100%; object-fit: cover;" />
+                  <a href="/categories/<%=cat.id%>" style="text-decoration: none;z-index: 999;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  text-align: center;"> <p class="category_list border-style"><%=cat.name%></p></a>
+            </div>
+
+        <% end %>
+    <% end %>
+
 </div>
 
 <h1 class="current-category"><%= params[:category] %></h1>
 
 <% if @articles.count == 0 %>
+<br/>
     <h1> There are no Articles found in this category </h1>
     <%else%>
 
     <div class="row" %>
 
     <% @articles.each do |article| %>
-    <div class="col-md-3">
-    <a href="/articles/<%= article.id %>">
-        <%= image_tag article.article_img.url(:article_index), class: "article"%>
-    </a>
-    </div>
+        <div class="col-md-3">
+            <a href="/articles/<%= article.id %>">
+                <%= image_tag article.article_img.url(:article_index), class: "article"%>
+            </a>
+        </div>
     <% end %>
  </div>
 
@@ -164,4 +177,10 @@ div.holder {
 
    
  </div>
+
+
+ 
+   
+
+
 

@@ -43,7 +43,6 @@ RSpec.describe ReviewsController, type: :controller do
       # rubocop:disable Layout/LineLength
       #     expect{user_article :create, params: { review: { article_id: user_article.id, user_id: user.id} }}.to change{Review.count}.by(1)
       # rubocop:enable Layout/LineLength
-
       #     expect(user_article.reviews.first.user_id).to eq user.id
       #   end
       # end

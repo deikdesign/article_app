@@ -53,16 +53,15 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'article #create' do
+      # rubocop:disable Layout/LineLength
       # describe 'when new article info is valid' do
       #   it 'creates the new article' do
-      # rubocop:disable Layout/LineLength
       #     expect{article :create, params: { article: { title: 'This is a new article!', description: 'This is a new article description!', category_id: category.id} }}.to change{Article.count}.by(1)
-      # rubocop:enable Layout/LineLength
-
       #     expect(article.first.title).to eq 'This is a new article!'
       #     expect(response).to redirect_to(root_url)
       #   end
       # end
+      # rubocop:enable Layout/LineLength
     end
 
     describe 'GET #edit' do

@@ -28,6 +28,8 @@ development:
   adapter: postgresql
   database: article_app_develpment
   pool: 5
+  username: dean
+  password: 1234
   timeout: 5000
 test:
   adapter: postgresql
@@ -35,6 +37,8 @@ test:
   pool: 5
   username: dean
   password: 1234
+  # username: postgres
+  # password: screen
   timeout: 5000
 
 production:
@@ -45,5 +49,23 @@ production:
   password: 1234
   timeout: 5000
 
+
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: article_app_develpment
+#   pool: 5
+#   username: 
+#   password: 
+#   timeout: 5000
+
+#   test:
+#     adapter: postgresql
+#     encoding: unicode 
+#     database: article_app_test
+#     pool: 5 
+#     username: 
+#     password: 
+#     timeout: 5000
 
 

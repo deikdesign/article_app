@@ -54,10 +54,14 @@ class ArticlesController < ApplicationController
   def upvote
     @article.upvote_from current_user
     redirect_to article_path(@article)
+
+    redirect_to article_path(@article)
   end
 
   def downvote
     @article.downvote_from current_user
+    redirect_to article_path(@article)
+
     redirect_to article_path(@article)
   end
 

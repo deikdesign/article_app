@@ -1,0 +1,7 @@
+<h1> Edit Category</h1>
+
+<%= simple_form_for(@category) do |f| %>
+<%= f.input :name, value: @category.name %>
+<%= f.button :submit %>
+
+<% end %>
