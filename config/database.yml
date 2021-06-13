@@ -47,24 +47,3 @@ production:
 
 
 
-
-
-# development:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: article_app_develpment
-#   pool: 5
-#   username: 
-#   password: 
-#   timeout: 5000
-
-#   test:
-#     adapter: postgresql
-#     encoding: unicode 
-#     database: article_app_test
-#     pool: 5 
-#     username: 
-#     password: 
-#     timeout: 5000
-
-
