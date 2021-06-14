@@ -28,6 +28,7 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 gem 'paperclip', '~> 6.1'
+gem 'rails_12factor', '~> 0.0.3'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rubocop-rails', require: false
 gem 'sassc-rails', '>= 2.1.0'

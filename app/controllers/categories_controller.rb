@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.all
+    @categories = Category.all.all.sort_by(&:priority).reverse
   end
 
   def show
@@ -41,7 +41,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :priority)
   end
 
   def find_category

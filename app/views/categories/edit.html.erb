@@ -2,6 +2,7 @@
 
 <%= simple_form_for(@category) do |f| %>
 <%= f.input :name, value: @category.name %>
+<%= f.input :priority, type: "number", value: @category.priority %> 
 <%= f.button :submit %>
 
 <% end %>
