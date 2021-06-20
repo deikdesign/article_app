@@ -13,8 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 
 .article {
   height: 350px;
@@ -30,7 +32,6 @@ a,
 .head {
   color: #fd6000;
 }
-
 
 body {
   color: #444;
@@ -88,4 +89,19 @@ div.holder {
 ::after,
 ::before {
   box-sizing: none;
+}
+
+footer {
+  background-color: #4e443f;
+
+}
+
+.bg-color {
+  background-color: #4e443f;
+
+}
+
+margin-left {
+  margin-left: 30px;
+
 }
