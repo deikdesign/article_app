@@ -1,39 +1,73 @@
+<style type="text/css">
+    .mar-l {
+        margin-left: 50px;
+    }
+</style>
+
+
+
 <h2><%= @category.name%> Page</h2>
 <div class="row">
 
     <% if @articles.any? %>
-                <% @articles.each do |article| %>
+    <% @articles.each do |article| %>
 
-                  
 
-                    <div class="col-sm-6 col-md-4">
+    <div class="card mb-3" style="width:540px">
+        <div class="row g-0">
+            <div class="col-md-4">
 
-                    <a href="/articles/<%= article.id %>">
-                                <%= image_tag article.article_img.url(:article_index), class: "article"%>
-                            </a>
+                <a href="/articles/<%= article.id %>">
+                    <%= image_tag article.article_img.url(:article_index), class: "article"%>
+                </a>
 
-                    <div class="thumbnail thumb-box">
-                    <h2 style="text-align:center;"><%= @category.name%></h2>
-                    
-                        <div class="caption" style="text-align:center;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body mar-l">
+
+                
+
+
+
+
+                    <h2><%= link_to "#{@category.name}", category_path(@category), :class => "fs-3 text-uppercase text-warning bold header-effect category-name card-title"%> </h2>
+
+                    <h2 class="text-uppercase card-title"> Title <%= article.title %></h2>
+                    <p class="card-text"><%= truncate("#{article.description}", :length => 120) %></p>
+                    <a class="font-italic text-warning card-text" href="/articles/<%= article.id %>"> Read More</a>
+
+                    <p class="card-text"><%= article.description  %></p>
+
+                    <div class="">
+                        
+
+                        <div class="caption" style="text-align:left;">
                             <%= link_to like_article_path(article), class: "like", method: :put do %>
                             <button type="button" class="btn btn-info" aria-label="Left Align" %>
-                                <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center"
+                                    aria-hidden="true"></span>
                                 <span class="badge"><%= article.get_upvotes.size %></span>
-                                </button>
-                                <% end %>
-                
-                                <%= link_to unlike_article_path(article), class: "like", method: :put do %>
+                            </button>
+                            <% end %>
+
+                            <%= link_to unlike_article_path(article), class: "like", method: :put do %>
                             <button type="button" class="btn btn-info" aria-label="Left Align" %>
-                                <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center"
+                                    aria-hidden="true"></span>
                                 <span class="badge"><%= article.get_downvotes.size %></span>
-                                </button>
-                                <% end %>
-                            </div>
-                        </div> 
+                            </button>
+                            <% end %>
+                        </div>
+
                     </div>
-             <% end %>
-     <%else%>
-        <h5>No article in this category yet!!</h5>
-     <%end%>
- 
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <% end %>
+    <%else%>
+    <h5>No article in this category yet!!</h5>
+    <%end%>
