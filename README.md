@@ -6,7 +6,7 @@ Social media website
 
 > Social Media application. You can sign up with and email and password and then create posts and add others as a friend.
 
-![alt text]("Preview Img")
+![alt text](./app/assets/images/article_app_diagram.JPG "Preview Img")
 
 ![alt text](./app/assets/images/article_app.JPG "Preview Img")
 
