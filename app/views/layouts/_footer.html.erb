@@ -1,0 +1,27 @@
+<style type="text/css">
+    bg-brown {
+        background-color: #4e443f;
+    }
+</style>
+
+
+<div class="container-fluid bg-brown">
+    <div class="row d-flex justify-content-between">
+        <div class="col-2">
+            <a class="navbar-brand mt-2">
+                <%= render 'layouts/logo', class:" pt-2" %>
+                    <%= link_to "Article Review", root_path, class:'navbar-brand bold text-nav text-white pt-2' %>
+            </a>
+        </div>
+        <div class="row px-auto pl-5 col-6 pt-2 d-flex justify-content-center">
+            <a class="px-10 pt-2 text-secondary h4 text-danger" href="#">Privacy</a>
+            <a class="px-1 pt-2 text-secondary h4 text-danger" href="#">Policy</a>
+            <a class="px-1 pt-2 text-secondary h4 text-danger" href="#">Terms & Conditions</a>
+            <p class="text-white px-1 pt-2 h4 text-danger">Copyright 2021</p>
+
+        </div>
+        <div class="col-4 pt-2">
+            <%= render 'layouts/social' %>
+        </div>
+    </div>
+</div>
