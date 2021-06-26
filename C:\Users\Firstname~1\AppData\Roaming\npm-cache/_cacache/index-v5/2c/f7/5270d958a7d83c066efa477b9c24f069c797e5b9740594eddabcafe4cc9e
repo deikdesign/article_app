@@ -1,0 +1,2 @@
+
+7d87883a8e0e1bf1c759274bc2b33aaebcd743be	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/nomnom/-/nomnom-1.8.1.tgz","integrity":"sha1-IVH3Ikcrp55Qp2/BJbuMjy5Nwqc=","time":1624653014830,"size":10417,"metadata":{"url":"https://registry.npmjs.org/nomnom/-/nomnom-1.8.1.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Fri, 25 Jun 2021 20:30:10 GMT","etag":"\"a3a3467049fe40a29a8ec5ef97671c9b\"","last-modified":"Sun, 27 May 2018 10:32:13 GMT","vary":"Accept-Encoding"}}}

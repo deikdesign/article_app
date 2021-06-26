@@ -1,0 +1,2 @@
+
+b5b673c50119e1c85e350990bb5e8510d246d8be	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/find-up/-/find-up-1.1.2.tgz","integrity":"sha1-ay6YIrGizgpgq2TWEOzK1TyyTQ8=","time":1624653006586,"size":2060,"metadata":{"url":"https://registry.npmjs.org/find-up/-/find-up-1.1.2.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Fri, 25 Jun 2021 20:29:56 GMT","etag":"\"c5c3ff7b1ec7ab9eb8d205cee67491f3\"","last-modified":"Sun, 27 May 2018 00:41:40 GMT","vary":"Accept-Encoding"}}}

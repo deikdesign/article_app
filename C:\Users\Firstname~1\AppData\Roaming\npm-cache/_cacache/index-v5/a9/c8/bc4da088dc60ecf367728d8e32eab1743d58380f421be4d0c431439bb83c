@@ -1,0 +1,2 @@
+
+4b8bbf50fea925753b30f19de3b3fa943d7c0d86	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/pixrem/-/pixrem-4.0.1.tgz","integrity":"sha1-LaSh3m7EQjxfw3lOkwuB1EkOxoY=","time":1624653013290,"size":7048,"metadata":{"url":"https://registry.npmjs.org/pixrem/-/pixrem-4.0.1.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Fri, 25 Jun 2021 20:30:07 GMT","etag":"\"af65e8e272535e662abc37ee9d677c6f\"","last-modified":"Sun, 27 May 2018 12:21:34 GMT","vary":"Accept-Encoding"}}}
