@@ -43,7 +43,7 @@ body {
 
 .top_slider {
   color: #fd6001;
-  font-weight: 2em;
+  font-weight: normal;
 }
 
 .category_list {
@@ -91,7 +91,7 @@ div.holder {
 *,
 ::after,
 ::before {
-  box-sizing: none;
+  box-sizing: content-box;
 }
 
 footer {
