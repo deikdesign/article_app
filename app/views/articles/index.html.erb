@@ -11,8 +11,9 @@
     
           <%if @most_voted%> 
           <div class="col-sm-12 col-md-8 p-2 b" style="display: inline-block;">
-          <%= image_tag @most_voted.article_img.url(:article_show), style: "height: auto; width: 900px; object-fit: cover;" %>
+          <%= image_tag @most_voted.article_img.url(:article_show), style: "no-repeat; height: auto; width: 900px; object-fit: cover; position:relative;" %>
           <a href="/articles/<%= @most_voted.id %>" style="z-index: 999;
+                              position:absolute;
                                margin: 0 auto;
                                left: 0;
                                right: 0;
