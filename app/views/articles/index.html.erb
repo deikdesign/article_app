@@ -7,25 +7,29 @@
     <div class="d-flex flex-md-row bg-color " >
 
     
-        <div class="col-sm-12 col-md-8 p-2 " style="background: url('../assets/article-writing-journalist.png') no-repeat; height: 350px; width: 100%; position:relative;">
-       <span style="position:absolute;
-       bottom:30px;
-       left: 50px;
-       text-align:center;
-       "> <h3 style="color:#fd6001; font-size: 27px;
-        font-weight: bold;">Python for everybody</h3>
-        <p style="color:white; font-size:16px;">Python for everybody is designed to introduced students to programming and <br/>
-        software development through the lens of exploring data.<br/></p>
-        <br/>
-        <a href="#" style="background:#fd6001;color:white;padding: 15px; text-align:center; border-radius: 5px; font-size:14px;font-weight:bold;text-decoration: none;">
-        Explore more
-        </a>
-        </span>
-        
-        </div>
+      
     
-
-    
+          <%if @most_voted%> 
+          <div class="col-sm-12 col-md-8 p-2 b" style="display: inline-block;">
+          <%= image_tag @most_voted.article_img.url(:article_show), style: "height: auto; width: auto; object-fit: cover;" %>
+          <a href="/articles/<%= @most_voted.id %>" style="z-index: 999;
+                               margin: 0 auto;
+                               left: 0;
+                               right: 0;
+                              top: 0%;
+                              text-align: center;"><p class="mv-section">Most Voted Section</p></a>
+                              <h3 style="color:#fd6001; font-size: 27px;
+                                font-weight: bold;">This the most popular article</h3>
+                                 <p style="color:white; font-size:16px;"> Select the Article<br/>
+                               <br/></p>
+                                <br/>
+                      </div>
+                    <%else%>
+                    <div class="col-sm-12 col-md-8 p-2 " style="background: url('../assets/mv.jpg') no-repeat; height: 350px;">
+                     <a href="#"><p class="mv-section">Most Voted</p></a>
+                   </div>
+                <%end%>
+            
 
     
         
