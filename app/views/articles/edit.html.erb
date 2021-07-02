@@ -1,0 +1,13 @@
+<h1> Edit Article </h1>
+
+<%=   simple_form_for @article, :html => { :multipart => true } do |f|   %>
+    <%= f.select :category_id, @categories %>    
+    <%=  f.file_field :article_img %>
+    <%=  f.input :title, label: "Article Title"   %>
+    <%=  f.input :description   %>
+    <%=  f.input :author   %>
+    <%=  f.button :submit   %>
+
+
+
+<% end   %>

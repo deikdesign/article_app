@@ -1,0 +1,70 @@
+
+<div class="row">
+        <div class="col-md-4">
+
+<%= image_tag @article.article_img.url(:article_show), class: "article-s" %>
+
+             <br>
+                <hr>
+                <br>
+               
+        <% @article = Article.find(params[:id]) do %>
+
+            <div class="caption" style="text-align:center;">
+                <%= @article.title  %>
+              <%= link_to like_article_path(params[:id]), class: "like", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align" %>
+                  <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= @article.get_upvotes.size %></span>
+                  </button>
+                  <% end %>
+
+                  <%= link_to unlike_article_path(params[:id]), class: "like", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align" %>
+                  <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= @article.get_downvotes.size %></span>
+                  </button>
+                  <% end %>
+                      </div>
+        <% end %>
+                <br>
+                <hr>
+                
+
+    </div>
+
+        <div class="col-md-8 ms-50">
+    <h2> Title <%= @article.title %></h2>
+    <h3> Author <%= @article.author %></h3>
+    
+    <h4> Category: <%= @article.category.name %></h4>
+    <p><%= @article.description  %></p>
+
+    </div>
+</div>
+
+    <div class="row">
+            <div class="col-md-4">
+    <!-- Where the reviews/ratings will go -->
+            <%= render @article.reviews %>
+
+             <div>
+                <%= link_to "Add Review", new_article_review_path(@article) %>
+                </div>
+
+         </div>
+    </div>
+
+<%= link_to "Back", root_path %> 
+
+<% if user_signed_in? %>
+
+    <% if @article.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_article_path(@article) %>
+    <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?"} %>
+
+
+    <% end %>
+<% end %>
+
