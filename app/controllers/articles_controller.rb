@@ -52,20 +52,28 @@ class ArticlesController < ApplicationController
   end
 
   def upvote
-    @article.upvote_from current_user
-    redirect_to article_path(@article)
+    begin
+      @article.upvote_from current_user
+      redirect_to article_path(@article)
+    rescue => e
+      redirect_to article_path(@article)
+    end
   end
 
   def downvote
-    @article.downvote_from current_user
-    redirect_to article_path(@article)
+    begin
+      @article.downvote_from current_user
+      redirect_to article_path(@article)
+    rescue => e
+      redirect_to article_path(@article)
+    end
   end
 
   private
 
   def find_most_voted_article
     with_voted = Article.all
-    @most_voted = with_voted.sort_by(&:cached_votes_up).reverse.first
+    @most_voted = with_voted.sort_by{|article| article.cached_votes_up }.reverse.first
     logger.info(@most_voted)
   end
 
