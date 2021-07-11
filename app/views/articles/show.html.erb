@@ -38,7 +38,9 @@
     <h3> Author <%= @article.author %></h3>
     
     <h4> Category: <%= @article.category.name %></h4>
-    <p><%= @article.description  %></p>
+     <p><%= @article.description  %></p>
+    <h4> Category: <%= @article = Category.includes([:category]) %></h4>
+   
 
     </div>
 </div>
@@ -46,7 +48,7 @@
     <div class="row">
             <div class="col-md-4">
     <!-- Where the reviews/ratings will go -->
-            <%= render @article.reviews %>
+            <%= render Articles.includes([:reviews]) %>
 
              <div>
                 <%= link_to "Add Review", new_article_review_path(@article) %>
