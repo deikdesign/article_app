@@ -67,7 +67,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    acts_as_votable (0.10.0)
+    acts_as_votable (0.13.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
@@ -426,7 +426,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  acts_as_votable (~> 0.10.0)
+  acts_as_votable (~> 0.13.1)
   bootsnap (>= 1.4.4)
   bootstrap-sass (~> 3.4, >= 3.4.1)
   bullet

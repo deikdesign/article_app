@@ -10,6 +10,7 @@
       
     
           <%if @most_voted%> 
+          <h1>Most voted is not bl;ank</h1>
           <div class="col-sm-12 col-md-8 p-2 b" style="display: inline-block;">
           <%= image_tag @most_voted.article_img.url(:article_show), style: "no-repeat; height: auto; width: 900px; object-fit: cover; position:relative;" %>
           <a href="/articles/<%= @most_voted.id %>" style="z-index: 999;
@@ -27,9 +28,8 @@
                                 <br/>
                       </div>
                     <%else%>
-                    <div class="col-sm-12 col-md-8 p-2 " style="background: url('../assets/mv.jpg') no-repeat; height: 350px;">
-                     <a href="#"><p class="mv-section">Most Voted</p></a>
-                   </div>
+                    <h1> MOST VOTED IS BLANK</>
+                    
                 <%end%>
             
 
