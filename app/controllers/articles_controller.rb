@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
 
   def show
     @review = @article.reviews
-
   end
 
   def new
