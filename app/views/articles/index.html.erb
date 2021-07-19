@@ -1,0 +1,85 @@
+<style type="text/css">
+
+</style>
+ <div class="holder ">
+
+ 
+    <div class="d-flex flex-md-row bg-color " >
+
+    
+      
+    
+          <%if @most_voted%> 
+          <h1>Most voted is not bl;ank</h1>
+          <div class="col-sm-12 col-md-8 p-2 b" style="display: inline-block;">
+          <%= image_tag @most_voted.article_img.url(:article_show), style: "no-repeat; height: auto; width: 900px; object-fit: cover; position:relative;" %>
+          <a href="/articles/<%= @most_voted.id %>" style="z-index: 999;
+                              position:absolute;
+                               margin: 0 auto;
+                               left: 0;
+                               right: 0;
+                              top: 0%;
+                              text-align: center;"><p class="mv-section">Most Voted Section</p></a>
+                              <h3 style="color:#fd6001; font-size: 27px;
+                                font-weight: bold;">This the most popular article</h3>
+                                 <p style="color:white; font-size:16px;"> Select the Article<br/>
+                               <br/>
+                               </p>
+                                <br/>
+                      </div>
+                    <%else%>
+                    <h1> MOST VOTED IS BLANK</>
+                    
+                <%end%>
+            
+
+    
+        
+      
+    </div>
+
+
+    <div class="d-flex flex-row bg-color" style="position:relative;">
+
+    <% if @cats.any? %> 
+        <% @cats.each do |cat| %>
+
+            <div class="p-1" style="display: inline-block;
+                    position: relative; height: 180px; width: 250px;">
+                  <img src="<%=['../assets/lf.jpg','../assets/cooking.jpg','../assets/article.jpg',
+                  '../assets/photo.jpg','../assets/photo.jpg'].sample%>",
+                   style="height: 100%; width: 100%; object-fit: cover;" />
+                  <a href="/categories/<%=cat.id%>" style="text-decoration: none;z-index: 999;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  text-align: center;"> <p class="category_list border-style"><%=cat.name%></p></a>
+            </div>
+
+        <% end %>
+    <% end %>
+
+</div>
+
+<h1 class="current-category"><%= params[:category] %></h1>
+
+<% if @articles.count == 0 %>
+<br/>
+    <h1> There are no Articles found in this category </h1>
+    <%else%>
+
+    <div class="row " %>
+
+ <%= link_to "", new_article_path %>
+<% end %>
+
+   
+ </div>
+
+
+ 
+   
+
+
+

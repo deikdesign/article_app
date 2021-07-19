@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.article {
+  height: 350px;
+  width: 250px;
+}
+
+.article-s {
+  height: 476px;
+  width: 325px;
+}
+
+a,
+.head {
+  color: #fd6000;
+}
+
+body {
+  color: #444;
+  background: #000;
+  // width: 100%;
+  // height: 100%;
+  // padding: 0px;
+  // overflow-x:hidden;
+}
+
+.top_slider {
+  color: #fd6001;
+  font-weight: normal;
+}
+
+.category_list {
+  color: #fd6001;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mv-section {
+  color: #fd6001;
+  font-size: 30px;
+  font-weight: 400;
+  padding-top: 70%;
+  text-align: center;
+}
+
+.border-style {
+  width: 70%;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  border-bottom-width: 7px;
+  margin-left: 10px;
+  z-index: 999;
+}
+
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+.mar-l {
+  margin-left: 20px;
+}
+
+.container {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+div.holder {
+  width: 100%;
+  background: #fff;
+  padding-bottom: 70px;
+}
+
+*,
+::after,
+::before {
+  box-sizing: content-box;
+}
+
+footer {
+  background-color: #4e443f;
+}
+
+.bg-color {
+  background-color: #4e443f;
+}
+
+.margin-left {
+  margin-left: 30px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}

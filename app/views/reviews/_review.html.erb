@@ -1,0 +1,14 @@
+    <p>RATING SCORE: <%= review.rating %></p>
+    <p>FEEDBACK: <%= review.comment %></p>
+
+
+<% if user_signed_in? %>
+
+    <% if review.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_article_review_path(review.article, review) %>
+<%= link_to "Delete", article_review_path(review.article, review), method: :delete, data: {confirm: "Are you sure?" } %>
+
+    <% end %>
+
+<% end %>

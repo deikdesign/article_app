@@ -1,0 +1,2 @@
+
+e16ee4eeecad67a98bc0f9ce77a2113d884b0e4a	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/levn/-/levn-0.3.0.tgz","integrity":"sha1-OwmSTt+fCDwEkP3UwLxEIeBHZO4=","time":1624722939012,"size":7967,"metadata":{"url":"https://registry.npmjs.org/levn/-/levn-0.3.0.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Sat, 26 Jun 2021 15:55:35 GMT","etag":"\"824680de0ed2dabe2745e88737723963\"","last-modified":"Sun, 27 May 2018 06:40:39 GMT","vary":"Accept-Encoding"}}}

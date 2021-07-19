@@ -1,0 +1,48 @@
+2021-07-10 22:18:30[WARN] user: dean
+GET /articles/7
+USE eager loading detected
+  Article => [:category]
+  Add to your query: .includes([:category])
+Call stack
+  /home/dean/Documents/github/article_app(11)/app/views/articles/show.html.erb:40:in `_app_views_articles_show_html_erb___1823674581249183749_75240'
+
+2021-07-10 22:18:30[WARN] user: dean
+GET /articles/7
+USE eager loading detected
+  Article => [:reviews]
+  Add to your query: .includes([:reviews])
+Call stack
+  /home/dean/Documents/github/article_app(11)/app/views/articles/show.html.erb:49:in `_app_views_articles_show_html_erb___1823674581249183749_75240'
+
+2021-07-14 17:25:16[WARN] user: dean
+GET /articles/5
+USE eager loading detected
+  Article => [:category]
+  Add to your query: .includes([:category])
+Call stack
+  /home/dean/Documents/github/article_app/app/views/articles/show.html.erb:40:in `_app_views_articles_show_html_erb___1884054383916537124_79640'
+
+2021-07-14 17:50:03[WARN] user: dean
+GET /articles/8
+USE eager loading detected
+  Article => [:category]
+  Add to your query: .includes([:category])
+Call stack
+  /home/dean/Documents/github/article_app/app/views/articles/show.html.erb:40:in `_app_views_articles_show_html_erb__3755639858326039310_72700'
+
+2021-07-16 23:33:37[WARN] user: dean
+GET /articles/7
+USE eager loading detected
+  Article => [:category]
+  Add to your query: .includes([:category])
+Call stack
+  /home/dean/Documents/github/article_app/app/views/articles/show.html.erb:42:in `_app_views_articles_show_html_erb___2218786393156179235_90580'
+
+2021-07-16 23:34:31[WARN] user: dean
+GET /articles/7
+USE eager loading detected
+  Article => [:category]
+  Add to your query: .includes([:category])
+Call stack
+  /home/dean/Documents/github/article_app/app/views/articles/show.html.erb:42:in `_app_views_articles_show_html_erb___2218786393156179235_90580'
+

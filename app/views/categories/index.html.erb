@@ -1,0 +1,49 @@
+
+<h2>Categories Index</h2>
+<% if @categories.any?%>
+  
+    <% @categories.each do |category| %>
+     <div class="col-xs-12">
+      <div class="text-center"><center>
+
+    <h3 onMouseOver="this.style.color='orange'"
+   onMouseOut="this.style.color='#73879C'" class ="lead">
+        <i style="font-size:27px"class="fa fa-star"> <a onMouseOver="this.style.color='orange'"
+   onMouseOut="this.style.color='#73879C'" href="/categories/<%= category.id%>"><%= category.name%></a></i></h3>
+     <h6><%= category.created_at.strftime('%b %d, %Y') %></h6>
+
+         <a onMouseOver="this.style.color='orange'"
+            onMouseOut="this.style.color='#73879C'" href="/categories/<%=category.id%>">
+        <i style="font-size:27px"class="fa fa-eye"></i>
+view
+        </a>
+     
+
+        <a onMouseOver="this.style.color='orange'"
+   onMouseOut="this.style.color='#73879C'" href="/categories/<%=category.id%>/edit">
+        edit
+
+        </a>
+
+        <%= link_to category, method: :delete, data: { confirm: 'Are you sure you really want to delete this Category?' } do%>delete<%end%>
+    
+
+</div>
+
+      <div>
+        
+        
+    </center>
+    </div>
+    
+      <br>
+    </div>
+<%end%>
+  
+
+   
+<%else%>
+<h3> There are no Categories created yet </h3>
+    <% end %>
+
+    <%= link_to "", new_category_path %>

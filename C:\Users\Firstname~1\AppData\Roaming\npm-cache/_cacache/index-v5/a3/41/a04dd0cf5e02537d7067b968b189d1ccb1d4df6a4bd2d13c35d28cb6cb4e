@@ -1,0 +1,2 @@
+
+b9a21d1ab9282a6fd6f224138bd7cc64e1b9a9ca	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/svgo/-/svgo-0.7.2.tgz","integrity":"sha1-n1dyQTlSE1xv779Ar+ak+qiLS7U=","time":1624722944920,"size":75494,"metadata":{"url":"https://registry.npmjs.org/svgo/-/svgo-0.7.2.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Sat, 26 Jun 2021 15:55:20 GMT","etag":"\"e87646d4cefb6b26a636be38195bba41\"","last-modified":"Sun, 27 May 2018 18:41:20 GMT","vary":"Accept-Encoding"}}}

@@ -1,0 +1,14 @@
+# .gitignore
+node_modules/
+
+.stylelintrc.json
+package-lock.json
+/node_modules
+node_modules
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

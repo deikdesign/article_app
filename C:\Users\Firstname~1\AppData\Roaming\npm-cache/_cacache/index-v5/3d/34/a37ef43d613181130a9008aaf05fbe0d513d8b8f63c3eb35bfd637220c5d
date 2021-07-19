@@ -1,0 +1,2 @@
+
+d93f379528d56e8501d145a2d352bd7bc161caa0	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/beeper/-/beeper-1.1.1.tgz","integrity":"sha1-5tXqjF2tABMEpwsiY4RH9pyy+Ak=","time":1624739915425,"size":2069,"metadata":{"url":"https://registry.npmjs.org/beeper/-/beeper-1.1.1.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Sat, 26 Jun 2021 20:38:33 GMT","etag":"\"f8746b3078c7491eaf71d67e97cbfa4d\"","last-modified":"Sat, 26 May 2018 18:16:30 GMT","vary":"Accept-Encoding"}}}
